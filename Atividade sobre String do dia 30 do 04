@@ -1,5 +1,6 @@
 // Kauê de Oliveira
-Questão 1
+Questão 1 - Contar o número de caracteres de uma string
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,6 +21,8 @@ int main()
     }
     printf("Quantidade de caracters: %d\n", contador-1);
     // -1 para ignorar o '\n' do fgets
+    return 0;
 }
 
-Questão 2
+Questão 2 - Contar o número de palavras em uma string
+
