@@ -1,0 +1,25 @@
+// Kauê de Oliveira
+Questão 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char texto[100];
+    int i = 0, contador = 0;
+
+    printf("Digite uma palavra: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    // Contando caracteres até encontrar o '\0'
+    while(texto[i] != '\0')
+    {
+        contador++; // Incrementa o contador
+        i++; // Avança o próximo caractere
+    }
+    printf("Quantidade de caracters: %d\n", contador-1);
+    // -1 para ignorar o '\n' do fgets
+}
+
+Questão 2
