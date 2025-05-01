@@ -2,8 +2,6 @@
 Questão 1 - Contar o número de caracteres de uma string
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main()
 {
@@ -17,7 +15,7 @@ int main()
     while(texto[i] != '\0')
     {
         contador++; // Incrementa o contador
-        i++; // Avança o próximo caractere
+        i++; // Avança para o próximo caractere
     }
     printf("Quantidade de caracters: %d\n", contador-1);
     // -1 para ignorar o '\n' do fgets
@@ -26,3 +24,88 @@ int main()
 
 Questão 2 - Contar o número de palavras em uma string
 
+#include <stdio.h>
+
+int main()
+{
+    char texto[200];
+    int i = 0, palavras = 0, em_palavra = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+
+    while(texto[i] != '\0')
+    {
+                    // V                //E             //V
+        if((texto[i] != ' ') && (texto[i] != '\n') && (em_palavra == 0))
+     {
+        em_palavra = 1;
+        palavras++;
+     } else if(texto[i] == ' ' || texto[i] == '\n')
+      {
+        em_palavra = 0;
+      }
+      i++;
+    }
+    printf("Quantidade de Palavras: %d\n", palavras);
+
+    return 0;
+}
+
+Questão 3 - Contar o numero de vogais numa string
+
+    #include <stdio.h>
+
+    int main()
+    {
+        char texto[100];
+        int i = 0, vogais = 0;
+
+        printf("Digite uma frase: ");
+        fgets(texto, sizeof(texto), stdin);
+
+        while(texto[i] != '\0')
+        {
+            // Verifica se é uma vogal
+            if(texto[i] == 'a' || texto[i] == 'e' || texto[i] == 'i' || texto[i] == 'o' || texto[i] == 'u' ||
+            texto[i] == 'A' || texto[i] == 'E' || texto[i] == 'I' || texto[i] == 'O' || texto[i] == 'U')
+            {
+            vogais++; // Contar as vogais
+            }
+            i++; // percorrer o vetor de char
+        }
+        printf("Quantidade de Vogais: %d\n", vogais);
+
+        return 0;
+     }
+
+Questão 4 - Contar quantas vezes uma letra aparece na string
+
+    #include <stdio.h>
+
+    int main()
+    {
+        char texto[100], letra;
+        int i = 0, contador = 0;
+
+        printf("Digite um texto: ");
+        fgets(texto, sizeof(texto), stdin);
+
+    printf("Digite a letra para contar");
+    scanf("%c", &letra); //Lê o caractere
+
+        while(texto[i] != '\0')
+        {
+            if(texto[i] == letra)
+            {
+                contador++;
+            }
+            i++;
+        }
+        printf("Quantidade de letras na frase: %d\n", contador);
+
+        return 0;
+     }
+
+Questão 5 - Converter uma string para letras maiúsculas
