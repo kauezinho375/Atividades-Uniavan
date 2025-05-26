@@ -52,7 +52,7 @@ d) 8
 e) Depende do compilador
 
 8. Como declarar uma constante inteira com valor 10 em C?
-Xa) const int x = 10; (Correta)
+Xa) const int x = 10;
 b) int const x = 10;
 c) constant x = 10;
 d) #define x 10
