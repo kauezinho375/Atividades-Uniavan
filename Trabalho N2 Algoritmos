@@ -1,0 +1,64 @@
+//Kaue de Oliveira
+// Trabalho N2
+//Algoritmos
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> // Necessário para o Time()
+
+// Define os limites máximos que os produtos e clientes podem chegar
+#define PRODUTOS 200
+#define CLIENTES 50
+
+// Função auxiliar usada para gerar números aleatórios
+int random(int n) {
+    return rand() % n;
+}
+
+int main() {
+    int a;
+    int nprodutinhos, nclientelas;      // Quantidade de produtos e de clientes
+    int comprinha[CLIENTES];        // Vetor na qual guarda o produto que cada cliente comprou
+    float precinho[PRODUTOS];       // Vetor que mostra os preços dos produtos
+    float total;             // Variável que armazena o total de vendas
+    float o;
+
+    // Inicializa o gerador de números aleatórios
+    srand((unsigned)time(NULL));
+
+    // Gera uma produtos entre 1 a 200
+    nprodutinhos = random(PRODUTOS) + 1; //Numero do produto
+
+    // Gera um preço para cada produto aleatoriamente
+    for (a = 0; a < nprodutinhos; a++) {
+        o = 5 + random(96); // preço do produto
+        precinho[a] = o;
+    }
+
+    // Gera a quantidade de clientes no codigo
+    nclientelas = random(CLIENTES) + 1;
+
+    // Como o codigo vai ser exibido
+    printf("Simulacao para:\n");
+    printf("%d produtos\n", nprodutinhos);
+    printf("%d clientes\n", nclientelas);
+    printf("-----------------------------\n");
+    printf("Cliente   Produto   Valor (R$)\n");
+    printf("-----------------------------\n");
+
+    // Para cada cliente:
+    for (a = 0; a < nclientelas; a++) {
+        comprinha[a] = random(nprodutinhos);           // escolhe um produto aleatório
+        printf("%7d   %7d   %9.2f\n",            // Mostra o cliente, produto e preço
+               a, comprinha[a], precinho[comprinha[a]]);
+        total = total + precinho[comprinha[a]];       // Ele soma o preço ao total de vendas
+    }
+
+    // Exibe umaa linha no final da tabela
+    printf("-----------------------------\n");
+
+    // Mostra o total de vendas que teve no dia
+    printf("TOTAL DE VENDAS   R$ %.2f\n", total);
+
+    return 0;
+}
